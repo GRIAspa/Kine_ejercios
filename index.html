@@ -559,4 +559,511 @@
                 
                 <!-- EJERCICIO 6 -->
                 <div class="exercise">
-                    <span clas
+                    <span class="exercise-category">Movilidad Cervical</span>
+                    <h3>6. Retracción Cervical (Doble Mentón)</h3>
+                    <div class="exercise-image">[Imagen 3D: Vista lateral, persona haciendo retracción cervical]</div>
+                    <div class="exercise-details">
+                        <h4>📝 Instrucciones:</h4>
+                        <ul>
+                            <li><strong>Posición inicial:</strong> Sentada o de pie, mirada al frente</li>
+                            <li>Sin inclinar la cabeza hacia arriba o abajo, desliza la cabeza hacia atrás (como si hicieras "doble mentón")</li>
+                            <li>Imagina que alguien empuja tu frente hacia atrás</li>
+                            <li>Sentirás estiramiento en la parte posterior del cuello</li>
+                            <li>Mantén 5 segundos</li>
+                            <li>Relaja y vuelve a posición neutral</li>
+                            <li>NO fuerces, debe ser suave</li>
+                        </ul>
+                        <div class="frequency">
+                            <strong>Frecuencia:</strong> 10 repeticiones | 3-4 veces al día
+                        </div>
+                        <h4 style="margin-top: 15px;">🎯 Objetivo:</h4>
+                        <p style="color: #6c757d; line-height: 1.6;">Corregir la postura de "cabeza adelantada", fortalecer flexores profundos del cuello y estirar músculos posteriores tensos. Excelente para hacer varias veces al día, especialmente si trabajas en computadora.</p>
+                    </div>
+                </div>
+                
+                <!-- PROTOCOLO CALOR -->
+                <div class="exercise">
+                    <span class="exercise-category">Terapia Complementaria</span>
+                    <h3>7. Aplicación de Calor Local</h3>
+                    <div class="exercise-image">[Imagen 3D: Aplicación de compresa caliente en zona cervical-dorsal]</div>
+                    <div class="exercise-details">
+                        <h4>📝 Instrucciones:</h4>
+                        <ul>
+                            <li><strong>Preparación:</strong> Bolsa de agua caliente o compresa térmica (NO hirviendo, temperatura agradable)</li>
+                            <li>También sirve: toalla mojada en agua caliente y bien escurrida</li>
+                            <li>Coloca sobre la zona cervical-dorsal (donde sientes más tensión)</li>
+                            <li>Puedes colocar una toalla seca entre la piel y la fuente de calor para proteger</li>
+                            <li>Relájate en posición cómoda (sentada o acostada)</li>
+                            <li>Duración: 15-20 minutos</li>
+                            <li>PRECAUCIÓN: No dormir con la fuente de calor puesta</li>
+                        </ul>
+                        <div class="frequency">
+                            <strong>Frecuencia:</strong> 15-20 minutos | 2-3 veces al día | Especialmente antes de ejercicios o antes de dormir
+                        </div>
+                        <h4 style="margin-top: 15px;">🎯 Objetivo:</h4>
+                        <p style="color: #6c757d; line-height: 1.6;">Relajar musculatura tensa, aumentar flujo sanguíneo local, reducir dolor, preparar los músculos para ejercicio o facilitar relajación antes de dormir.</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>💡 Consejos Importantes:</h4>
+                    <ul>
+                        <li><strong>Consistencia sobre intensidad:</strong> Es mejor hacer los ejercicios todos los días con menor intensidad que hacerlos muy intensos una vez a la semana</li>
+                        <li><strong>Respira:</strong> Nunca contengas la respiración durante los ejercicios. Respira profundo y constante</li>
+                        <li><strong>Dolor vs. Molestia:</strong> Debes sentir trabajo muscular (molestia), pero NO dolor agudo. Si duele, reduce intensidad</li>
+                        <li><strong>Progresión:</strong> Las primeras semanas pueden ser desafiantes. La mejora se nota usualmente después de 2-4 semanas de práctica consistente</li>
+                        <li><strong>Complementa con conciencia postural:</strong> Durante el día, nota tu postura al sentarte, estar de pie, usar el celular</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- TAB: REGISTRAR SESIÓN -->
+            <div id="tracking" class="tab-content">
+                <h2 style="margin-bottom: 25px; color: #495057;">Registrar Sesión de Ejercicios</h2>
+                
+                <form class="tracking-form" onsubmit="saveEntry(event)">
+                    <div class="form-group">
+                        <label>📅 Fecha y Hora</label>
+                        <input type="datetime-local" id="entryDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>🕐 Momento del día</label>
+                        <select id="session" required>
+                            <option value="">Selecciona...</option>
+                            <option value="Mañana">Mañana</option>
+                            <option value="Tarde">Tarde</option>
+                            <option value="Noche">Noche</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>✅ Ejercicios completados</label>
+                        <div style="margin-top: 10px;">
+                            <label style="display: block; margin-bottom: 8px;"><input type="checkbox" id="ex1" value="Y-T-W"> Y-T-W</label>
+                            <label style="display: block; margin-bottom: 8px;"><input type="checkbox" id="ex2" value="Retracción Escapular"> Retracción Escapular</label>
+                            <label style="display: block; margin-bottom: 8px;"><input type="checkbox" id="ex3" value="Estiramiento Pectoral"> Estiramiento Pectoral</label>
+                            <label style="display: block; margin-bottom: 8px;"><input type="checkbox" id="ex4" value="Rollo Torácico"> Rollo Torácico</label>
+                            <label style="display: block; margin-bottom: 8px;"><input type="checkbox" id="ex5" value="Ángel de Nieve"> Ángel de Nieve</label>
+                            <label style="display: block; margin-bottom: 8px;"><input type="checkbox" id="ex6" value="Retracción Cervical"> Retracción Cervical</label>
+                            <label style="display: block; margin-bottom: 8px;"><input type="checkbox" id="ex7" value="Calor Local"> Calor Local</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>💧 Hidratación (litros de agua aproximados hoy)</label>
+                        <input type="number" id="hydration" step="0.1" min="0" max="10" placeholder="Ej: 2.5">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>😊 Nivel de dolor ANTES de ejercicios (0 = sin dolor, 10 = máximo dolor)</label>
+                        <div class="slider-container">
+                            <input type="range" id="painBefore" class="slider" min="0" max="10" value="5" oninput="updateSliderValue('painBefore', 'painBeforeValue')">
+                            <div class="slider-value" id="painBeforeValue">5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>😊 Nivel de dolor DESPUÉS de ejercicios (0 = sin dolor, 10 = máximo dolor)</label>
+                        <div class="slider-container">
+                            <input type="range" id="painAfter" class="slider" min="0" max="10" value="5" oninput="updateSliderValue('painAfter', 'painAfterValue')">
+                            <div class="slider-value" id="painAfterValue">5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>🎯 Nivel de tensión muscular (0 = muy relajado, 10 = muy tenso)</label>
+                        <div class="slider-container">
+                            <input type="range" id="tension" class="slider" min="0" max="10" value="5" oninput="updateSliderValue('tension', 'tensionValue')">
+                            <div class="slider-value" id="tensionValue">5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>💫 ¿Tuviste mareos hoy?</label>
+                        <select id="dizziness">
+                            <option value="">Selecciona...</option>
+                            <option value="No">No</option>
+                            <option value="Leves">Leves</option>
+                            <option value="Moderados">Moderados</option>
+                            <option value="Severos">Severos</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>📝 Notas adicionales (síntomas, observaciones, cómo te sentiste)</label>
+                        <textarea id="notes" placeholder="Ej: Hoy me sentí con más movilidad en el cuello. La tensión disminuyó después del calor. Tomé más agua que ayer..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">💾 Guardar Registro</button>
+                    <button type="button" class="btn btn-secondary" onclick="resetForm()">🔄 Limpiar</button>
+                </form>
+            </div>
+            
+            <!-- TAB: HISTORIAL -->
+            <div id="history" class="tab-content">
+                <h2 style="margin-bottom: 25px; color: #495057;">Historial de Progreso</h2>
+                
+                <div class="stats" id="statsContainer">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalSessions">0</div>
+                        <div class="stat-label">Sesiones Totales</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="avgPainReduction">0%</div>
+                        <div class="stat-label">Reducción Promedio de Dolor</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="avgHydration">0L</div>
+                        <div class="stat-label">Hidratación Promedio</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3 style="color: #495057;">Registros Guardados</h3>
+                    <button class="btn btn-secondary" onclick="exportData()">📥 Exportar Datos</button>
+                </div>
+                
+                <div id="historyContainer">
+                    <!-- Las entradas se cargarán aquí dinámicamente -->
+                </div>
+            </div>
+            
+            <!-- TAB: INFORMACIÓN -->
+            <div id="info" class="tab-content">
+                <h2 style="margin-bottom: 25px; color: #495057;">Información Importante</h2>
+                
+                <div class="warning-box">
+                    <h4>⚠️ Advertencia Médica</h4>
+                    <p>Esta herramienta es un complemento de seguimiento personal y NO reemplaza la evaluación médica profesional. Los ejercicios aquí descritos son generales y pueden no ser apropiados para todas las condiciones.</p>
+                    <p style="margin-top: 10px;"><strong>Consulta con un profesional de salud (traumatólogo, kinesiólogo) si:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>El dolor aumenta significativamente con los ejercicios</li>
+                        <li>Experimentas hormigueo, entumecimiento o debilidad en brazos/manos</li>
+                        <li>Los mareos se vuelven frecuentes o severos</li>
+                        <li>Tienes pérdida de balance o desmayos</li>
+                        <li>No ves mejoría después de 4 semanas de práctica consistente</li>
+                    </ul>
+                </div>
+                
+                <div class="info-box">
+                    <h4>📱 Sobre esta Herramienta</h4>
+                    <p><strong>Almacenamiento:</strong> Todos tus datos se guardan localmente en tu navegador (localStorage). No se envían a ningún servidor.</p>
+                    <p style="margin-top: 10px;"><strong>Privacidad:</strong> Tus datos son 100% privados y solo accesibles desde este navegador en este dispositivo.</p>
+                    <p style="margin-top: 10px;"><strong>Respaldo:</strong> Puedes exportar tus datos usando el botón "Exportar Datos" en la pestaña de Historial. Guarda el archivo JSON como respaldo.</p>
+                    <p style="margin-top: 10px;"><strong>Acceso:</strong> Guarda esta página en tus favoritos o en tu pantalla de inicio para acceso rápido. Si accedes con tu cuenta de Google en Chrome, tus datos se sincronizarán entre dispositivos donde uses Chrome con la misma cuenta.</p>
+                </div>
+                
+                <div class="info-box">
+                    <h4>🎯 Consejos para Máximo Beneficio</h4>
+                    <ul>
+                        <li><strong>Consistencia:</strong> Practica los ejercicios 2 veces al día durante al menos 4 semanas para ver resultados significativos</li>
+                        <li><strong>Registra todo:</strong> Mientras más completo sea tu seguimiento, mejor podrás identificar patrones y mejorías</li>
+                        <li><strong>Observa tendencias:</strong> Revisa tu historial semanalmente para ver tu progreso</li>
+                        <li><strong>Hidratación:</strong> La deshidratación agrava los mareos y la tensión muscular. Mínimo 2.5L diarios</li>
+                        <li><strong>Paciencia:</strong> Los cambios posturales toman tiempo. No te desanimes si no ves resultados inmediatos</li>
+                        <li><strong>Escucha tu cuerpo:</strong> Si algo no se siente bien, detente y consulta</li>
+                    </ul>
+                </div>
+                
+                <div class="exercise" style="background: #e7f3ff; border-left-color: #17a2b8;">
+                    <h3 style="color: #17a2b8;">🌟 Prompts para Generar Imágenes 3D</h3>
+                    <p style="margin-bottom: 15px; color: #0c5460;">Si deseas crear imágenes ilustrativas para los ejercicios, puedes usar estos prompts en herramientas de generación de imágenes con IA:</p>
+                    
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <strong>1. Y-T-W:</strong>
+                        <p style="color: #6c757d; margin-top: 5px; font-family: monospace; font-size: 0.9em;">"3D medical illustration, clean white background, woman lying face down on yoga mat, arms extended forming Y shape then T shape then W shape, educational style, side and top view, anatomical correctness, soft lighting"</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <strong>2. Retracción Escapular:</strong>
+                        <p style="color: #6c757d; margin-top: 5px; font-family: monospace; font-size: 0.9em;">"3D medical illustration, clean background, back view of woman sitting on chair, shoulder blades squeezing together, arrows showing scapular retraction movement, educational anatomical style"</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <strong>3. Estiramiento Pectoral:</strong>
+                        <p style="color: #6c757d; margin-top: 5px; font-family: monospace; font-size: 0.9em;">"3D illustration, woman standing in corner with forearms on walls, leaning forward stretching chest, side view, anatomical markers showing pectoral stretch, clean educational style"</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <strong>4. Rollo Torácico:</strong>
+                        <p style="color: #6c757d; margin-top: 5px; font-family: monospace; font-size: 0.9em;">"3D medical illustration, woman lying on back with foam roller under upper spine, knees bent, side view showing thoracic extension, anatomical cross-section detail, educational style"</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <strong>5. Ángel de Nieve:</strong>
+                        <p style="color: #6c757d; margin-top: 5px; font-family: monospace; font-size: 0.9em;">"3D illustration, woman standing against wall, back flat, arms sliding up wall like snow angel, front and side view, movement arrows, clean educational medical style"</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <strong>6. Retracción Cervical:</strong>
+                        <p style="color: #6c757d; margin-top: 5px; font-family: monospace; font-size: 0.9em;">"3D medical illustration, profile view, woman's head and neck, showing chin tuck movement, before and after position, arrows indicating cervical retraction, anatomical style"</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 15px; border-radius: 8px;">
+                        <strong>7. Calor Local:</strong>
+                        <p style="color: #6c757d; margin-top: 5px; font-family: monospace; font-size: 0.9em;">"3D illustration, woman sitting relaxed with hot pack on upper back/neck area, cross-section showing heat penetration into muscle tissue, calming colors, educational medical style"</p>
+                    </div>
+                </div>
+                
+                <div class="exercise" style="background: #f8f9fa; border-left-color: #6c757d;">
+                    <h3 style="color: #495057;">📧 Contacto y Desarrollo</h3>
+                    <p style="color: #6c757d; line-height: 1.6;">
+                        Esta herramienta fue creada como parte del desarrollo de soluciones de salud accesibles por <strong>GRIA SpA</strong> (Gestión Resiliente de Innovación Ambiental).
+                    </p>
+                    <p style="color: #6c757d; line-height: 1.6; margin-top: 10px;">
+                        <strong>Visión:</strong> Creemos que la tecnología puede democratizar el acceso a herramientas de salud y bienestar. Este es un prototipo de cómo sistemas de seguimiento personal pueden empoderar a las personas en su recuperación.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inicializar fecha y hora actual
+        document.getElementById('entryDate').valueAsDate = new Date();
+        
+        // Sistema de tabs
+        function showTab(tabName) {
+            // Ocultar todos los contenidos
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Desactivar todos los tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Activar el tab seleccionado
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            
+            // Si es el historial, cargar datos
+            if (tabName === 'history') {
+                loadHistory();
+            }
+        }
+        
+        // Actualizar valores de los sliders
+        function updateSliderValue(sliderId, valueId) {
+            const value = document.getElementById(sliderId).value;
+            document.getElementById(valueId).textContent = value;
+        }
+        
+        // Guardar entrada
+        function saveEntry(event) {
+            event.preventDefault();
+            
+            // Recopilar ejercicios completados
+            const exercises = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+                exercises.push(checkbox.value);
+            });
+            
+            // Crear objeto de entrada
+            const entry = {
+                id: Date.now(),
+                date: document.getElementById('entryDate').value,
+                session: document.getElementById('session').value,
+                exercises: exercises,
+                hydration: document.getElementById('hydration').value,
+                painBefore: document.getElementById('painBefore').value,
+                painAfter: document.getElementById('painAfter').value,
+                tension: document.getElementById('tension').value,
+                dizziness: document.getElementById('dizziness').value,
+                notes: document.getElementById('notes').value
+            };
+            
+            // Obtener datos existentes
+            let data = JSON.parse(localStorage.getItem('rehabData') || '[]');
+            data.push(entry);
+            
+            // Guardar en localStorage
+            localStorage.setItem('rehabData', JSON.stringify(data));
+            
+            // Mostrar confirmación
+            alert('✅ Registro guardado exitosamente');
+            
+            // Limpiar formulario
+            resetForm();
+            
+            // Cambiar a pestaña de historial
+            showTab('history');
+            document.querySelectorAll('.tab')[2].classList.add('active');
+        }
+        
+        // Resetear formulario
+        function resetForm() {
+            document.querySelector('form').reset();
+            document.getElementById('entryDate').valueAsDate = new Date();
+            document.getElementById('painBeforeValue').textContent = '5';
+            document.getElementById('painAfterValue').textContent = '5';
+            document.getElementById('tensionValue').textContent = '5';
+        }
+        
+        // Cargar historial
+        function loadHistory() {
+            const data = JSON.parse(localStorage.getItem('rehabData') || '[]');
+            const container = document.getElementById('historyContainer');
+            
+            if (data.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <h3>No hay registros todavía</h3>
+                        <p>Comienza registrando tu primera sesión de ejercicios</p>
+                    </div>
+                `;
+                
+                // Actualizar estadísticas
+                document.getElementById('totalSessions').textContent = '0';
+                document.getElementById('avgPainReduction').textContent = '0%';
+                document.getElementById('avgHydration').textContent = '0L';
+                return;
+            }
+            
+            // Ordenar por fecha (más reciente primero)
+            data.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            // Calcular estadísticas
+            const totalSessions = data.length;
+            let totalPainReduction = 0;
+            let totalHydration = 0;
+            let validPainEntries = 0;
+            let validHydrationEntries = 0;
+            
+            data.forEach(entry => {
+                if (entry.painBefore && entry.painAfter) {
+                    const reduction = ((entry.painBefore - entry.painAfter) / entry.painBefore) * 100;
+                    totalPainReduction += reduction;
+                    validPainEntries++;
+                }
+                if (entry.hydration) {
+                    totalHydration += parseFloat(entry.hydration);
+                    validHydrationEntries++;
+                }
+            });
+            
+            const avgPainReduction = validPainEntries > 0 ? (totalPainReduction / validPainEntries).toFixed(1) : 0;
+            const avgHydration = validHydrationEntries > 0 ? (totalHydration / validHydrationEntries).toFixed(1) : 0;
+            
+            // Actualizar estadísticas
+            document.getElementById('totalSessions').textContent = totalSessions;
+            document.getElementById('avgPainReduction').textContent = avgPainReduction + '%';
+            document.getElementById('avgHydration').textContent = avgHydration + 'L';
+            
+            // Generar HTML para cada entrada
+            container.innerHTML = data.map(entry => {
+                const date = new Date(entry.date);
+                const formattedDate = date.toLocaleDateString('es-CL', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                const painReduction = entry.painBefore && entry.painAfter 
+                    ? ((entry.painBefore - entry.painAfter) / entry.painBefore * 100).toFixed(1)
+                    : 'N/A';
+                
+                return `
+                    <div class="entry">
+                        <div class="entry-header">
+                            <div class="entry-date">${formattedDate}</div>
+                            <div class="entry-session">${entry.session}</div>
+                        </div>
+                        
+                        <div class="entry-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Ejercicios completados</div>
+                                <div class="detail-value">${entry.exercises.length} de 7</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Dolor antes → después</div>
+                                <div class="detail-value">${entry.painBefore || 'N/A'} → ${entry.painAfter || 'N/A'}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Reducción de dolor</div>
+                                <div class="detail-value">${painReduction}%</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Tensión muscular</div>
+                                <div class="detail-value">${entry.tension || 'N/A'}/10</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Hidratación</div>
+                                <div class="detail-value">${entry.hydration || 'N/A'}L</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Mareos</div>
+                                <div class="detail-value">${entry.dizziness || 'N/A'}</div>
+                            </div>
+                        </div>
+                        
+                        ${entry.exercises.length > 0 ? `
+                            <div style="margin: 15px 0; padding: 12px; background: #f8f9fa; border-radius: 8px;">
+                                <strong style="color: #495057;">Ejercicios realizados:</strong>
+                                <div style="margin-top: 8px; color: #6c757d;">
+                                    ${entry.exercises.map(ex => `<span style="display: inline-block; background: white; padding: 5px 10px; border-radius: 15px; margin: 3px; font-size: 0.9em;">✓ ${ex}</span>`).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                        
+                        ${entry.notes ? `
+                            <div class="entry-notes">
+                                <strong>Notas:</strong> ${entry.notes}
+                            </div>
+                        ` : ''}
+                        
+                        <div style="margin-top: 15px; text-align: right;">
+                            <button class="delete-btn" onclick="deleteEntry(${entry.id})">🗑️ Eliminar</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        // Eliminar entrada
+        function deleteEntry(id) {
+            if (!confirm('¿Estás segura de que deseas eliminar este registro?')) {
+                return;
+            }
+            
+            let data = JSON.parse(localStorage.getItem('rehabData') || '[]');
+            data = data.filter(entry => entry.id !== id);
+            localStorage.setItem('rehabData', JSON.stringify(data));
+            loadHistory();
+        }
+        
+        // Exportar datos
+        function exportData() {
+            const data = JSON.parse(localStorage.getItem('rehabData') || '[]');
+            
+            if (data.length === 0) {
+                alert('No hay datos para exportar');
+                return;
+            }
+            
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `rehabilitacion-postural-${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+            
+            alert('✅ Datos exportados exitosamente. Guarda este archivo como respaldo.');
+        }
+        
+        // Cargar historial al inicio si estamos en esa pestaña
+        if (document.getElementById('history').classList.contains('active')) {
+            loadHistory();
+        }
+    </script>
+</body>
+</html>
