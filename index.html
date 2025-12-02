@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Rehabilitación Postural - Seguimiento Personal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.3s;
+            border: none;
+            background: none;
+            font-size: 1em;
+        }
+        
+        .tab:hover {
+            background: #e9ecef;
+        }
+        
+        .tab.active {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            background: white;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .exercise {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .exercise h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .exercise-category {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+        
+        .exercise-image {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            background: #e9ecef;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .exercise-details {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        .exercise-details h4 {
+            color: #495057;
+            margin-bottom: 10px;
+        }
+        
+        .exercise-details ul {
+            margin-left: 20px;
+            line-height: 1.8;
+            color: #6c757d;
+        }
+        
+        .frequency {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        
+        .frequency strong {
+            color: #856404;
+        }
+        
+        .tracking-form {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #495057;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .slider-container {
+            margin-top: 10px;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #e9ecef;
+            outline: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .slider-value {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #667eea;
+            margin-top: 10px;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            margin-left: 10px;
+        }
+        
+        .entry {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .entry-date {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        
+        .entry-session {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .entry-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .detail-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+        }
+        
+        .detail-label {
+            font-size: 0.85em;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+        
+        .detail-value {
+            font-weight: 600;
+            color: #495057;
+            font-size: 1.1em;
+        }
+        
+        .entry-notes {
+            background: #fff3cd;
+            padding: 12px;
+            border-radius: 8px;
+            color: #856404;
+            font-style: italic;
+        }
+        
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        
+        .delete-btn:hover {
+            background: #c82333;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            opacity: 0.9;
+            font-size: 1em;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+        }
+        
+        .empty-state svg {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        .info-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .info-box h4 {
+            color: #0c5460;
+            margin-bottom: 10px;
+        }
+        
+        .info-box ul {
+            margin-left: 20px;
+            color: #0c5460;
+            line-height: 1.8;
+        }
+        
+        .warning-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .warning-box h4 {
+            color: #721c24;
+            margin-bottom: 10px;
+        }
+        
+        .warning-box p {
+            color: #721c24;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .entry-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .entry-session {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧘‍♀️ Rehabilitación Postural Cervical-Dorsal</h1>
+            <p>Guía personalizada de ejercicios y seguimiento de progreso</p>
+        </header>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('exercises')">📋 Ejercicios</button>
+            <button class="tab" onclick="showTab('tracking')">📝 Registrar Sesión</button>
+            <button class="tab" onclick="showTab('history')">📊 Historial</button>
+            <button class="tab" onclick="showTab('info')">ℹ️ Información</button>
+        </div>
+        
+        <div class="content">
+            <!-- TAB: EJERCICIOS -->
+            <div id="exercises" class="tab-content active">
+                <h2 style="margin-bottom: 25px; color: #495057;">Programa de Ejercicios</h2>
+                
+                <!-- EJERCICIO 1 -->
+                <div class="exercise">
+                    <span class="exercise-category">Fortalecimiento</span>
+                    <h3>1. Ejercicio Y-T-W (Ángeles en el suelo)</h3>
+                    <div class="exercise-image">[Imagen 3D: Persona boca abajo formando Y-T-W con los brazos]</div>
+                    <div class="exercise-details">
+                        <h4>📝 Instrucciones:</h4>
+                        <ul>
+                            <li><strong>Posición inicial:</strong> Acostada boca abajo en el suelo o colchoneta, frente apoyada en el piso</li>
+                            <li><strong>Y:</strong> Extiende ambos brazos hacia arriba en diagonal (formando una Y con tu cuerpo). Levanta ligeramente del suelo, apretando omóplatos. Sostén 2-3 segundos.</li>
+                            <li><strong>T:</strong> Mueve los brazos hacia los lados (perpendiculares al cuerpo). Levanta, aprieta omóplatos. Sostén 2-3 segundos.</li>
+                            <li><strong>W:</strong> Dobla codos a 90°, brazos formando W. Levanta, aprieta omóplatos. Sostén 2-3 segundos.</li>
+                            <li>Baja lentamente y repite</li>
+                        </ul>
+                        <div class="frequency">
+                            <strong>Frecuencia:</strong> 10 repeticiones de cada letra (Y-T-W) | 2-3 series | 2 veces al día (mañana y tarde)
+                        </div>
+                        <h4 style="margin-top: 15px;">🎯 Objetivo:</h4>
+                        <p style="color: #6c757d; line-height: 1.6;">Fortalecer músculos romboides, trapecio medio e inferior, y erectores espinales torácicos. Estos músculos son clave para mantener la postura erguida y contrarrestar la cifosis.</p>
+                    </div>
+                </div>
+                
+                <!-- EJERCICIO 2 -->
+                <div class="exercise">
+                    <span class="exercise-category">Fortalecimiento</span>
+                    <h3>2. Retracción Escapular (Apretar omóplatos)</h3>
+                    <div class="exercise-image">[Imagen 3D: Vista posterior, persona sentada juntando omóplatos]</div>
+                    <div class="exercise-details">
+                        <h4>📝 Instrucciones:</h4>
+                        <ul>
+                            <li><strong>Posición inicial:</strong> Sentada en silla con espalda recta, brazos relajados a los lados</li>
+                            <li>Sin levantar hombros, lleva los omóplatos hacia atrás y abajo, como si quisieras juntar los codos detrás de tu espalda</li>
+                            <li>Imagina que aprietas un lápiz entre tus omóplatos</li>
+                            <li>Mantén el cuello relajado y la mirada al frente</li>
+                            <li>Sostén la contracción 5 segundos</li>
+                            <li>Relaja lentamente y repite</li>
+                        </ul>
+                        <div class="frequency">
+                            <strong>Frecuencia:</strong> 15 repeticiones | 2-3 series | 2 veces al día
+                        </div>
+                        <h4 style="margin-top: 15px;">🎯 Objetivo:</h4>
+                        <p style="color: #6c757d; line-height: 1.6;">Activar y fortalecer los músculos que retraen la escápula (romboides y trapecio medio), mejorando la postura de hombros hacia adelante.</p>
+                    </div>
+                </div>
+                
+                <!-- EJERCICIO 3 -->
+                <div class="exercise">
+                    <span class="exercise-category">Estiramiento</span>
+                    <h3>3. Estiramiento Pectoral en Esquina</h3>
+                    <div class="exercise-image">[Imagen 3D: Persona en esquina con brazos en la pared]</div>
+                    <div class="exercise-details">
+                        <h4>📝 Instrucciones:</h4>
+                        <ul>
+                            <li><strong>Posición inicial:</strong> De pie frente a una esquina o marco de puerta</li>
+                            <li>Coloca antebrazos en ambas paredes (o lados del marco), con codos a la altura de los hombros formando 90°</li>
+                            <li>Da un paso adelante con un pie</li>
+                            <li>Inclina suavemente el cuerpo hacia adelante hasta sentir estiramiento en el pecho</li>
+                            <li>Mantén la espalda recta, no arquees la zona lumbar</li>
+                            <li>Respira profundamente durante el estiramiento</li>
+                        </ul>
+                        <div class="frequency">
+                            <strong>Frecuencia:</strong> Sostener 30 segundos | 3 repeticiones | 2 veces al día
+                        </div>
+                        <h4 style="margin-top: 15px;">🎯 Objetivo:</h4>
+                        <p style="color: #6c757d; line-height: 1.6;">Liberar tensión y elongar músculos pectorales acortados, que al estar tensos jalan los hombros hacia adelante contribuyendo a la cifosis.</p>
+                    </div>
+                </div>
+                
+                <!-- EJERCICIO 4 -->
+                <div class="exercise">
+                    <span class="exercise-category">Corrección Postural</span>
+                    <h3>4. Extensión Torácica con Rollo (Foam Roller o Toalla)</h3>
+                    <div class="exercise-image">[Imagen 3D: Persona acostada con rollo bajo espalda superior]</div>
+                    <div class="exercise-details">
+                        <h4>📝 Instrucciones:</h4>
+                        <ul>
+                            <li><strong>Preparación:</strong> Enrolla una toalla firme (5-8cm diámetro) o usa foam roller</li>
+                            <li>Acuéstate boca arriba en el suelo</li>
+                            <li>Coloca el rollo transversalmente bajo la zona de las vértebras dorsales altas (justo donde sientes la "joroba", aproximadamente C7-T1)</li>
+                            <li>Flexiona rodillas, pies apoyados en el suelo</li>
+                            <li>Brazos pueden estar relajados a los lados o extendidos sobre la cabeza (si es cómodo)</li>
+                            <li>Respira profundamente, permitiendo que la gravedad trabaje</li>
+                            <li>IMPORTANTE: Debe ser cómodo, no doloroso</li>
+                        </ul>
+                        <div class="frequency">
+                            <strong>Frecuencia:</strong> 10 minutos diarios | Preferentemente antes de dormir
+                        </div>
+                        <h4 style="margin-top: 15px;">🎯 Objetivo:</h4>
+                        <p style="color: #6c757d; line-height: 1.6;">Movilizar y extender pasivamente la columna torácica, contrarrestando la curva cifótica aumentada. Ayuda a "descomprimir" la zona.</p>
+                    </div>
+                </div>
+                
+                <!-- EJERCICIO 5 -->
+                <div class="exercise">
+                    <span class="exercise-category">Fortalecimiento Postural</span>
+                    <h3>5. Ángel de Nieve en Pared</h3>
+                    <div class="exercise-image">[Imagen 3D: Persona contra pared haciendo ángel de nieve]</div>
+                    <div class="exercise-details">
+                        <h4>📝 Instrucciones:</h4>
+                        <ul>
+                            <li><strong>Posición inicial:</strong> De pie, espalda completamente pegada a una pared</li>
+                            <li>Pies a 10-15cm de la pared, rodillas ligeramente flexionadas</li>
+                            <li>Aplanar zona lumbar contra la pared (contrae abdomen)</li>
+                            <li>Brazos comienzan abajo, codos y dorso de manos tocando la pared</li>
+                            <li>Lentamente desliza brazos hacia arriba por la pared, manteniendo contacto</li>
+                            <li>Sube hasta donde puedas sin despegar la espalda</li>
+                            <li>Baja lentamente manteniendo el control</li>
+                            <li>CLAVE: Omóplatos siempre pegados a la pared</li>
+                        </ul>
+                        <div class="frequency">
+                            <strong>Frecuencia:</strong> 10 repeticiones lentas | 2-3 series | 1-2 veces al día
+                        </div>
+                        <h4 style="margin-top: 15px;">🎯 Objetivo:</h4>
+                        <p style="color: #6c757d; line-height: 1.6;">Reeducar el patrón postural correcto, fortalecer estabilizadores de escápula, y mejorar la movilidad del hombro en posición postural correcta.</p>
+                    </div>
+                </div>
+                
+                <!-- EJERCICIO 6 -->
+                <div class="exercise">
+                    <span clas
